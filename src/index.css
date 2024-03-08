@@ -1,13 +1,78 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+
+
+:root{
+
+--color--blue__marine: hsl(213, 96%, 18%);
+--color--blue__purple: hsl(243, 100%, 62%);
+--color--blue__pastel: hsl(228, 100%, 84%);
+--color--blue__light: hsl(206, 94%, 87%);
+--color--strawberry__red: hsl(354, 84%, 57%);
+
+/* ### Neutral */
+
+--color--gray__cool: hsl(231, 11%, 63%);
+--color--gray__light: hsl(229, 24%, 87%);
+--color--magnolia: hsl(217, 100%, 97%);
+--color--alabaster: hsl(231, 100%, 99%);
+--color--white: hsl(0, 0%, 100%);
+
+--default--font-size: 16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+[data-theme="dark"] {
+--color-dark-blue__shade: hsl(209, 23%, 22%);
+--color-dark-blue:  hsl(207, 26%, 17%);
+--color-dark-tint: hsl(200, 15%, 8%);
+
+--color-grey: hsl(0, 0%, 52%);
+--color-gray__shade: hsl(0, 0%, 98%);
+--color-white: hsl(0, 0%, 100%);
+
+--default-font-size: 1.4rem;
+--font-size__detail-page: 1.8rem;
+
+--color-bg__inner: var(--color-dark-blue__shade);
+--text-color: hsl(200, 15%, 8%);
+
+--default-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./fonts/Ubuntu-Regular.ttf') format('truetype'),
+       url('./fonts/Ubuntu-Bold.ttf') format('truetype') /* Bold weight */,
+       url('./fonts/Ubuntu-Medium.ttf') format('truetype') /* Medium weight */;
+  font-weight: normal; /* Applies to the regular font */
+  font-style: normal;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.8rem;
+  box-sizing: border-box;
+  font-size: var(--default-font-size);
+  color: var(--text-color);
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-dark-blue);
 }
