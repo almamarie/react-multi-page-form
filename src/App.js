@@ -16,9 +16,7 @@ function App() {
   };
 
   const nextStep = () => {
-    console.log("Here=---=-=--");
     setCurrentStep((prev) => {
-      // return 3;
       if (prev > steps.length - 1) return 0;
       console.log(prev + 1);
       return ++prev;
@@ -31,8 +29,6 @@ function App() {
       return --prev;
     });
   };
-
-  console.log("Current step: ", currentStep);
 
   const stepsControllers = {
     nextStep,
