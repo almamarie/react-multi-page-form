@@ -9,39 +9,24 @@
 
 
 :root{
-
---color--blue__marine: hsl(213, 96%, 18%);
---color--blue__purple: hsl(243, 100%, 62%);
---color--blue__pastel: hsl(228, 100%, 84%);
---color--blue__light: hsl(206, 94%, 87%);
---color--strawberry__red: hsl(354, 84%, 57%);
+--color--blue__marine--tint: #1b3e6b;
+--color--blue__marine: #02295a;
+--color--blue__purple: rgb(71, 61, 255);
+--color--blue__pastel: rgb(173, 190, 255);
+--color--blue__light: rgb(191, 226, 253);
+--color--strawberry__red: rgb(237, 53, 72);
 
 /* ### Neutral */
 
---color--gray__cool: hsl(231, 11%, 63%);
---color--gray__light: hsl(229, 24%, 87%);
---color--magnolia: hsl(217, 100%, 97%);
---color--alabaster: hsl(231, 100%, 99%);
---color--white: hsl(0, 0%, 100%);
+--color--gray__cool: rgb(150, 153, 171);
+--color--gray__light: rgb(214, 217, 230);
+--color--magnolia: rgb(240, 246, 255);
+--color--alabaster: rgb(250, 251, 255);
+--color--white: rgb(255, 255, 255);
+--color--black: #000;
 
---default--font-size: 16px;
-}
-
-
-[data-theme="dark"] {
---color-dark-blue__shade: hsl(209, 23%, 22%);
---color-dark-blue:  hsl(207, 26%, 17%);
---color-dark-tint: hsl(200, 15%, 8%);
-
---color-grey: hsl(0, 0%, 52%);
---color-gray__shade: hsl(0, 0%, 98%);
---color-white: hsl(0, 0%, 100%);
-
---default-font-size: 1.4rem;
---font-size__detail-page: 1.8rem;
-
---color-bg__inner: var(--color-dark-blue__shade);
---text-color: hsl(200, 15%, 8%);
+--default--font-size: 1.6rem;
+--default--border-radius: 1.6rem;
 
 --default-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -63,16 +48,17 @@ html{
 *{
   margin: 0;
   padding: 0;
+
   list-style: none;
-  font-size: 1.8rem;
+  font-size: var(--default--font-size);
+  color: var(--color--blue__marine);
+
   box-sizing: border-box;
-  font-size: var(--default-font-size);
-  color: var(--text-color);
 }
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-dark-blue);
+  background-color: var(--color--magnolia);
 }

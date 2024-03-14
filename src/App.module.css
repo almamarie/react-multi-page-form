@@ -1,0 +1,23 @@
+.wrapper {
+    width: 100rem;
+    height: 60rem;
+    background-color: var(--color--white);
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: var(--default--border-radius);
+
+    box-shadow: var(--default-box-shadow);
+
+    display: grid;
+    grid-template-columns: 27.4rem 1fr;
+    gap: 12.8rem;
+}
+
+.content {
+    margin: 5.6rem 12.8rem 0 0;
+}

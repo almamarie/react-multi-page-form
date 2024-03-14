@@ -1,0 +1,93 @@
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+.wrapper {
+    position: relative;
+    padding: 1.6rem;
+}
+
+.img{
+    position: absolute;
+
+    top: 1.6rem;
+    left: 1.6rem;
+    z-index: -1;
+}
+
+.nav {
+    padding: 4.8rem 2.4rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.step-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+    cursor: pointer;
+}
+
+.step-wrapper:hover .step-name{
+    font-weight: bold;
+}
+
+.step-number-wrapper {
+    width: 3.2rem;
+    height: 3.2rem;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--color--blue__pastel);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--color--white);
+    font-size: 1.8rem;
+}
+
+.step-number {
+    color: var(--color--white);
+}
+
+.step-content{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+
+    color: var(--color--white);
+}
+
+.step-name{
+    font-size: 1.2rem;
+    color: var(--color--blue__pastel);
+}
+
+.step-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color--white);
+}
+
+.step-wrapper:hover .step-number-wrapper{
+    background-color: var(--color--blue__light);
+    color: var(--color--black);
+}
+
+.active-tab .step-number-wrapper, .active-tab:hover .step-number-wrapper{
+    background-color: var(--color--blue__pastel);
+    color: var(--color--black);
+}
+
+.active-tab .step-number, .active-tab:hover .step-number{
+    color: var(--color--black);
+}

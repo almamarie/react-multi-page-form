@@ -1,0 +1,20 @@
+.btn-wrapper{
+    width: 100%;
+    text-align: right;
+}
+
+.btn {
+    color: var(--color--gray__cool);
+
+    border: none;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.btn:hover {
+    color: var(--color--mongolia);
+}

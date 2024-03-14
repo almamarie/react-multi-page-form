@@ -1,0 +1,143 @@
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+.wrapper h2{
+    font-size: 3.6rem;
+    font-weight: 700;
+
+    color: var(--color--blue__marine);
+}
+
+.description{
+    display: block;
+    margin: 1.2rem 0 2.4rem 0;
+
+    color: var(--color--gray__cool);
+}
+
+.plans{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 4.8rem;
+}
+
+
+.plan{
+    width: 15rem;
+    height: 16rem;
+
+    padding: 1.2rem;
+
+    border: 1px solid var(--color--gray__cool);
+    border-radius: var(--default--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+
+
+.plan:hover {
+    border: 1px solid var(--color--blue__marine);
+}
+
+
+.active-plan{
+    border: 1px solid var(--color--blue__marine);
+
+}
+
+
+.plan-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.amount {
+    font-size: 1.4rem;
+    color: var(--color--gray__cool);
+}
+
+.plan-types{
+    margin-top: 3.2rem;
+    height: 4.8rem;
+
+    background-color: var(--color--magnolia);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: .8rem;
+
+    border-radius: 1rem;
+}
+
+.plan-type{
+    color: var(--color--gray__cool);
+
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.radio-button{
+    width: 3.2rem;
+    height: 1.8rem;
+    background-color: var(--color--blue__marine);
+
+    border-radius: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.left {
+    justify-content: flex-start;   
+}
+
+.right {
+    justify-content: flex-end; 
+}
+
+.radio-controller{
+    margin: 0 .4rem;
+
+    width: 1.4rem;
+    height: 1.4rem;
+
+    border-radius: 50%;
+
+    background-color: var(--color--white);
+
+}
+
+.active-plan-duration{
+    color: var(--color--blue__marine);
+}
+
+
+
+.btns{
+    margin-top: 8rem;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
