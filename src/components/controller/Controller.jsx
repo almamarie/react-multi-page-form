@@ -5,7 +5,6 @@ import bgImage from "../../resources/multi-step-form-main/assets/images/bg-sideb
 const Controller = (props) => {
   const { currentStep } = props;
   const setCurrentStep = props.stepsControllers.setCurrentStep;
-  console.log("Rerendering: ", currentStep);
   const steps = [
     {
       number: 1,

@@ -17,12 +17,12 @@ const Step2 = (props) => {
   };
 
   const validateForm = () => {
-    const plans = {
+    const plan = {
       activeplan,
       planDuration,
     };
 
-    sessionStorage.setItem("personalInfo", JSON.stringify(plans));
+    sessionStorage.setItem("plan", JSON.stringify(plan));
 
     props.stepsControllers.nextStep();
   };

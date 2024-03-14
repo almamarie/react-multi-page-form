@@ -1,0 +1,90 @@
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+.wrapper h2{
+    font-size: 3.6rem;
+    font-weight: 700;
+
+    color: var(--color--blue__marine);
+}
+
+.description{
+    display: block;
+    margin: 1.2rem 0 2.4rem 0;
+
+    color: var(--color--gray__cool);
+}
+
+.add-ons{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.add-on {
+    padding: 0 2.4rem ;
+    height: 8rem;
+
+    background-color: var(--color--magnolia);
+
+    border: 1px solid transparent;
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.add-on:hover {
+    border: 1px solid var(--color--blue__marine);
+}
+
+.text-desc {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.text span {
+      color: var(--color--gray__cool);
+      font-size: 1.4rem;
+}
+
+.check-box{
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: .4rem;
+    background-color: var(--color--blue__purple);
+}
+
+.amount {
+    color: var(--color--blue__purple);
+    font-size: 1.4rem;
+}
+
+.btns{
+    margin-top: 8rem;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.active-add-on{
+    border: 1px solid var(--color--blue__marine);
+}

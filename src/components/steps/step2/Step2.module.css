@@ -34,7 +34,7 @@
 
     padding: 1.2rem;
 
-    border: 1px solid var(--color--gray__cool);
+    border: 1px solid var(--color--blue__purple);
     border-radius: var(--default--border-radius);
 
     display: flex;
@@ -47,7 +47,7 @@
 
 
 .plan:hover {
-    border: 1px solid var(--color--blue__marine);
+    border: 1px solid var(--color--blue__purple);
 }
 
 
