@@ -4,7 +4,7 @@ import BackButton from "../../ui/BackButton";
 import NextButton from "../../ui/NextButton";
 
 const Step2 = (props) => {
-  const [activeplan, setActivePlan] = useState("arcade");
+  const [activePlan, setActivePlan] = useState("arcade");
   const [planDuration, setPlanDuration] = useState("monthly");
 
   const changePlanDuration = () => {
@@ -16,9 +16,16 @@ const Step2 = (props) => {
     });
   };
 
+  const plans = {
+    arcade: planDuration === "monthly" ? 9 : 90,
+    advanced: planDuration === "monthly" ? 12 : 120,
+    pro: planDuration === "monthly" ? 15 : 150,
+  };
+
   const validateForm = () => {
     const plan = {
-      activeplan,
+      activePlan,
+      activePlanAmount: plans[activePlan],
       planDuration,
     };
 
@@ -40,7 +47,7 @@ const Step2 = (props) => {
       <div className={styles.plans}>
         <div
           className={`${styles.plan} ${
-            activeplan === "arcade" ? styles["active-plan"] : ""
+            activePlan === "arcade" ? styles["active-plan"] : ""
           }`}
           onClick={() => setActivePlan("arcade")}
         >
@@ -62,13 +69,18 @@ const Step2 = (props) => {
           </svg>
           <div className={styles["plan-text"]}>
             <span className={styles.title}>Arcade</span>
-            <span className={styles.amount}>$9/mo</span>
+            <span className={styles.amount}>{`$${plans["arcade"]}/${
+              planDuration === "monthly" ? "mo" : "yr"
+            }`}</span>
+            {planDuration === "yearly" && (
+              <span className={styles["yearly-discount"]}>2 months free</span>
+            )}
           </div>
         </div>
 
         <div
           className={`${styles.plan} ${
-            activeplan === "advanced" ? styles["active-plan"] : ""
+            activePlan === "advanced" ? styles["active-plan"] : ""
           }`}
           onClick={() => setActivePlan("advanced")}
         >
@@ -90,13 +102,18 @@ const Step2 = (props) => {
           </svg>
           <div className={styles["plan-text"]}>
             <span className={styles.title}>Advanced</span>
-            <span className={styles.amount}>$12/mo</span>
+            <span className={styles.amount}>{`$${plans["advanced"]}/${
+              planDuration === "monthly" ? "mo" : "yr"
+            }`}</span>
+            {planDuration === "yearly" && (
+              <span className={styles["yearly-discount"]}>2 months free</span>
+            )}
           </div>
         </div>
 
         <div
           className={`${styles.plan} ${
-            activeplan === "pro" ? styles["active-plan"] : ""
+            activePlan === "pro" ? styles["active-plan"] : ""
           }`}
           onClick={() => setActivePlan("pro")}
         >
@@ -117,7 +134,12 @@ const Step2 = (props) => {
           </svg>
           <div className={styles["plan-text"]}>
             <span className={styles.title}>Pro</span>
-            <span className={styles.amount}>$15/mo</span>
+            <span className={styles.amount}>{`$${plans["pro"]}/${
+              planDuration === "monthly" ? "mo" : "yr"
+            }`}</span>
+            {planDuration === "yearly" && (
+              <span className={styles["yearly-discount"]}>2 months free</span>
+            )}
           </div>
         </div>
       </div>

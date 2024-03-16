@@ -1,0 +1,65 @@
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+
+.wrapper{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.icon-wrapper{
+    height: 8rem;
+    width: 8rem;
+
+    border-radius: 50%;
+
+    background-color: var(--color--strawberry__red);
+
+    margin-bottom: 4.8rem;
+}
+
+.icon-wrapper,.icon-white-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-white-box{
+    height: 4rem;
+    width: 4rem;
+
+    border-radius: 50%;
+
+    background-color: var(--color--white);
+}
+
+.svg{
+    stroke: var(--color--strawberry__red);
+
+    width: 2rem;
+    height: 1.6rem;
+}
+
+.thank-you{
+    font-size: 3rem;
+    font-weight: bold;
+
+    color: var(--color--blue__marine);
+    margin-bottom: 2rem;
+}
+
+.p{
+    color: var(--color--gray__cool);
+    margin-bottom: 8rem;
+}

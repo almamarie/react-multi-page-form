@@ -1,0 +1,131 @@
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+.wrapper h2{
+    font-size: 3.6rem;
+    font-weight: 700;
+
+    color: var(--color--blue__marine);
+}
+
+.description{
+    display: block;
+    margin: 1.2rem 0 2.4rem 0;
+
+    color: var(--color--gray__cool);
+}
+
+.confirm-box{
+    margin-top: 4.8rem;
+    padding: 2.4rem;
+
+    background-color: var(--color--magnolia);
+
+    border-radius: 1rem;
+}
+
+.plan-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plan-duration{
+    display: flex;
+    flex-direction: column;
+
+    gap: .4rem;
+}
+
+.plan, .duration {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.change-plan {
+  width: 10rem;
+  padding: 0;
+  margin: 0;
+
+  color: var(--color--gray__cool);
+  text-decoration: underline;
+
+  font-size: 1.4rem;
+}
+
+.change-plan:hover{
+    color: var(--color--blue__purple);;
+    cursor: pointer;
+}
+
+.amount {
+    font-weight: bold;
+}
+
+.divider{
+    height: 1px ;
+    background-color: var(--color--gray__light);
+
+    margin: 2.4rem 0;
+}
+
+.add-ons{
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.add-on{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-on-name {    
+    color: var(--color--gray__cool);
+
+    font-size: 1.4rem;
+}
+
+.add-on-amount{
+    font-size: 1.4rem;
+}
+
+.total{
+    padding: 3.2rem 2.4rem 0 2.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total--name{
+    color: var(--color--gray__cool);
+
+    font-size: 1.4rem;
+}
+
+.total--amount{
+    font-size: 1.8rem;
+    font-weight:bolder;
+
+    color: var(--color--blue__purple);
+}
+
+
+.btns{
+    margin-top: 8rem;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn--confirm {
+    background-color: var(--color--blue__purple);
+}
