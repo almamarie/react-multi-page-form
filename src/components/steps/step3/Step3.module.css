@@ -88,3 +88,14 @@
 .active-add-on{
     border: 1px solid var(--color--blue__marine);
 }
+
+
+/* ===============================
+* 750
+==================================*/
+@media (max-width:46.875em) {
+    .btns {
+        display: none;
+        visibility: hidden;
+    }
+}

@@ -37,101 +37,122 @@ const Step3 = (props) => {
     };
   };
 
-  const validateForm = () => {
-    let addOns = {};
+  // const validateForm = () => {
+  //   props.stepsControllers.nextStep(() => {
+  //     let addOns = {};
 
-    activeAddOns.forEach((ad) => {
-      addOns[ad] = AddOns[ad];
-    });
+  //     activeAddOns.forEach((ad) => {
+  //       addOns[ad] = AddOns[ad];
+  //     });
 
-    sessionStorage.setItem("addOns", JSON.stringify(addOns));
+  //     sessionStorage.setItem("addOns", JSON.stringify(addOns));
 
-    props.stepsControllers.nextStep();
+  //     return true;
+  //   });
+  // };
+
+  const validateForm = {
+    validate: true,
+    validateFn: () => {
+      let addOns = {};
+
+      activeAddOns.forEach((ad) => {
+        addOns[ad] = AddOns[ad];
+      });
+
+      sessionStorage.setItem("addOns", JSON.stringify(addOns));
+
+      return true;
+    },
   };
 
-  const isActiveAddOn = (addOnName) => {
-    return activeAddOns.includes(addOnName);
-  };
+  props.validation.current = validateForm;
 
-  return (
-    <div className={styles.wrapper}>
-      <h2>Pick add-ons</h2>
-      <span className={styles.description}>
-        Add-ons help enhance your gaming experience
-      </span>
+    const isActiveAddOn = (addOnName) => {
+      return activeAddOns.includes(addOnName);
+    };
 
-      <ul className={styles["add-ons"]}>
-        <li
-          className={`${styles["add-on"]} ${
-            isActiveAddOn("online service") ? styles["active-add-on"] : ""
-          }`}
-          onClick={toggleActiveAddOn("online service")}
-        >
-          <div className={styles["text-desc"]}>
-            <div className={styles["check-box"]}>
-              {/* TODO: ADD correct box here */}
+    return (
+      <div className={styles.wrapper}>
+        <h2>Pick add-ons</h2>
+        <span className={styles.description}>
+          Add-ons help enhance your gaming experience
+        </span>
+
+        <ul className={styles["add-ons"]}>
+          <li
+            className={`${styles["add-on"]} ${
+              isActiveAddOn("online service") ? styles["active-add-on"] : ""
+            }`}
+            onClick={toggleActiveAddOn("online service")}
+          >
+            <div className={styles["text-desc"]}>
+              <div className={styles["check-box"]}>
+                {/* TODO: ADD correct box here */}
+              </div>
+
+              <span className={styles.text}>
+                <h3>Online service</h3>
+                <span>Access to multiplayer games</span>
+              </span>
             </div>
 
-            <span className={styles.text}>
-              <h3>Online service</h3>
-              <span>Access to multiplayer games</span>
-            </span>
-          </div>
+            <span className={styles.amount}>{`+$${AddOns["online service"]}/${
+              plan.planDuration === "monthly" ? "mo" : "yr"
+            }`}</span>
+          </li>
+          <li
+            className={`${styles["add-on"]} ${
+              isActiveAddOn("larger storage") ? styles["active-add-on"] : ""
+            }`}
+            onClick={toggleActiveAddOn("larger storage")}
+          >
+            <div className={styles["text-desc"]}>
+              <div className={styles["check-box"]}>
+                {/* TODO: ADD correct box here */}
+              </div>
 
-          <span className={styles.amount}>{`+$${AddOns["online service"]}/${
-            plan.planDuration === "monthly" ? "mo" : "yr"
-          }`}</span>
-        </li>
-        <li
-          className={`${styles["add-on"]} ${
-            isActiveAddOn("larger storage") ? styles["active-add-on"] : ""
-          }`}
-          onClick={toggleActiveAddOn("larger storage")}
-        >
-          <div className={styles["text-desc"]}>
-            <div className={styles["check-box"]}>
-              {/* TODO: ADD correct box here */}
+              <span className={styles.text}>
+                <h3>Larger storage</h3>
+                <span>Extra 1TB of cloud save</span>
+              </span>
             </div>
 
-            <span className={styles.text}>
-              <h3>Larger storage</h3>
-              <span>Extra 1TB of cloud save</span>
-            </span>
-          </div>
+            <span className={styles.amount}>{`+$${AddOns["larger storage"]}/${
+              plan.planDuration === "monthly" ? "mo" : "yr"
+            }`}</span>
+          </li>
+          <li
+            className={`${styles["add-on"]} ${
+              isActiveAddOn("customizable profile")
+                ? styles["active-add-on"]
+                : ""
+            }`}
+            onClick={toggleActiveAddOn("customizable profile")}
+          >
+            <div className={styles["text-desc"]}>
+              <div className={styles["check-box"]}>
+                {/* TODO: ADD correct box here */}
+              </div>
 
-          <span className={styles.amount}>{`+$${AddOns["larger storage"]}/${
-            plan.planDuration === "monthly" ? "mo" : "yr"
-          }`}</span>
-        </li>
-        <li
-          className={`${styles["add-on"]} ${
-            isActiveAddOn("customizable profile") ? styles["active-add-on"] : ""
-          }`}
-          onClick={toggleActiveAddOn("customizable profile")}
-        >
-          <div className={styles["text-desc"]}>
-            <div className={styles["check-box"]}>
-              {/* TODO: ADD correct box here */}
+              <span className={styles.text}>
+                <h3>Customizable profile</h3>
+                <span>Custome theme on your profile</span>
+              </span>
             </div>
 
-            <span className={styles.text}>
-              <h3>Customizable profile</h3>
-              <span>Custome theme on your profile</span>
-            </span>
-          </div>
+            <span className={styles.amount}>{`+$${
+              AddOns["customizable profile"]
+            }/${plan.planDuration === "monthly" ? "mo" : "yr"}`}</span>
+          </li>
+        </ul>
 
-          <span className={styles.amount}>{`+$${
-            AddOns["customizable profile"]
-          }/${plan.planDuration === "monthly" ? "mo" : "yr"}`}</span>
-        </li>
-      </ul>
-
-      <div className={styles.btns}>
-        <BackButton onPrev={goBack} />
-        <NextButton onNext={validateForm} />
+        <div className={styles.btns}>
+          <BackButton onPrev={goBack} />
+          <NextButton onNext={props.stepsControllers.nextStep} />
+        </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default Step3;

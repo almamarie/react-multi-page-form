@@ -9,7 +9,6 @@ const Step1 = (props) => {
 
   const [error, setError] = useState([]);
   const validateEmail = () => {
-    console.log("Here... mail");
     const email = emailRef.current.value;
     const isValid = email.match(
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -49,19 +48,25 @@ const Step1 = (props) => {
     return true;
   };
 
-  const validateForm = () => {
-    if (!validateName() || !validateEmail() || !validatePhone()) return;
 
-    const personalInfo = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      phoneNumber: phoneRef.current.value,
-    };
+  const validateForm = {
+    validate: true,
+    validateFn: () => {
+      if (!validateName() || !validateEmail() || !validatePhone()) return false;
 
-    sessionStorage.setItem("personalInfo", JSON.stringify(personalInfo));
+      const personalInfo = {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        phoneNumber: phoneRef.current.value,
+      };
 
-    props.stepsControllers.nextStep();
+      sessionStorage.setItem("personalInfo", JSON.stringify(personalInfo));
+
+      return true;
+    },
   };
+
+  props.validation.current = validateForm;
 
   return (
     <div className={styles.wrapper}>
@@ -139,7 +144,7 @@ const Step1 = (props) => {
       </div>
 
       <div className={styles["next-btn-wrapper"]}>
-        <NextButton onNext={validateForm} />
+        <NextButton onNext={props.stepsControllers.nextStep} />
       </div>
     </div>
   );

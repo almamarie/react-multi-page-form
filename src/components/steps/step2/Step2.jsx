@@ -22,17 +22,21 @@ const Step2 = (props) => {
     pro: planDuration === "monthly" ? 15 : 150,
   };
 
-  const validateForm = () => {
-    const plan = {
-      activePlan,
-      activePlanAmount: plans[activePlan],
-      planDuration,
-    };
+  const validateForm = {
+    validate: true,
+    validateFn: () => {
+      const plan = {
+        activePlan,
+        activePlanAmount: plans[activePlan],
+        planDuration,
+      };
 
-    sessionStorage.setItem("plan", JSON.stringify(plan));
-
-    props.stepsControllers.nextStep();
+      sessionStorage.setItem("plan", JSON.stringify(plan));
+      return true;
+    },
   };
+
+  props.validation.current = validateForm;
 
   const goBack = () => {
     props.stepsControllers.prevStep();
@@ -171,7 +175,7 @@ const Step2 = (props) => {
 
       <div className={styles.btns}>
         <BackButton onPrev={goBack} />
-        <NextButton onNext={validateForm} />
+        <NextButton onNext={props.stepsControllers.nextStep} />
       </div>
     </div>
   );

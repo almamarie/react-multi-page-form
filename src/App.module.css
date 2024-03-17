@@ -1,5 +1,5 @@
 .wrapper {
-    width: 100rem;
+    width: 98rem;
     height: 60rem;
     background-color: var(--color--white);
 
@@ -20,4 +20,90 @@
 
 .content {
     margin: 5.6rem 12.8rem 0 0;
+}
+
+.btns {
+    display: none;
+    visibility: hidden;
+
+    background-color: var(--color--white);
+
+    height: 8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 2.4rem;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+
+/* ===============================
+* 1000px
+==================================*/
+@media (max-width:62.5em) {
+    .wrapper {
+        width: 80rem;
+
+        gap: 6.4rem;
+    }
+
+    .content{
+    margin: 5.6rem 6.4rem 0 0;
+
+    }
+}
+
+
+/* ===============================
+* 750
+==================================*/
+@media (max-width:46.875em) {
+    .wrapper {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background-color: transparent;
+
+        box-shadow:none;
+    }
+
+    .content {
+        position: absolute;
+        width: 80%;
+        padding: 2.4rem;
+
+        left: 50%;
+        top: 10rem;
+        transform: translateX(-50%);
+
+        background-color: var(--color--white);
+
+        border-radius: var(--default--border-radius);
+
+    }
+
+    .btns{
+        display: flex;
+        visibility: visible;
+    }
+}
+
+
+/* ===============================
+* 550
+==================================*/
+@media (max-width:34.375em) {
+    .content{
+        width: 90%;
+    }
 }

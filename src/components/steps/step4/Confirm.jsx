@@ -17,7 +17,7 @@ const Confirm = () => {
               className={styles.svg}
               fill="none"
               stroke="#FFF"
-              stroke-width="2"
+              strokeWidth="2"
               d="m1 4 3.433 3.433L10.866 1"
             />
           </svg>

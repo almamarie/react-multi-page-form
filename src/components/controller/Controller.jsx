@@ -27,7 +27,8 @@ const Controller = (props) => {
   ];
   return (
     <div className={styles.wrapper}>
-      <img src={bgImage} className={styles.img} alt="background" />
+      <div className={styles.img} />
+
       <nav className={styles.nav}>
         {steps.map((step, index) => {
           return (

@@ -129,3 +129,14 @@
 .btn--confirm {
     background-color: var(--color--blue__purple);
 }
+
+
+/* ===============================
+* 750
+==================================*/
+@media (max-width:46.875em) {
+    .btns {
+        display: none;
+        visibility: hidden;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Step4.module.css";
 import BackButton from "../../ui/BackButton";
 import NextButton from "../../ui/NextButton";
@@ -8,7 +8,9 @@ const Step4 = (props) => {
   const [userData, setUserData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [totalAmount, setTotal] = useState(0);
-  const [confirmed, setConfirmed] = useState(false);
+  // const [confirmed, setConfirmed] = useState(false);
+
+  const { confirmed, setConfirmed } = props.confirmed;
   const parseUserData = () => {
     const plan = JSON.parse(sessionStorage.getItem("plan"));
     const addOns = JSON.parse(sessionStorage.getItem("addOns"));
@@ -21,15 +23,8 @@ const Step4 = (props) => {
         ? addOnList.reduce((val, acc) => acc + val) + plan.activePlanAmount
         : plan.activePlanAmount;
 
-    console.log(
-      "Total: ",
-      addOnList.reduce((val, acc) => acc + val)
-    );
-
     setTotal(total);
   };
-
-  // console.log("Entries: ", Object.entries(userData.addOns));
 
   useEffect(() => {
     setIsLoading(true);
@@ -37,13 +32,12 @@ const Step4 = (props) => {
     setIsLoading(false);
   }, []);
 
-  console.log("User data: ", userData);
-
   const goBack = () => {
     props.stepsControllers.prevStep();
   };
 
   const confirmHandler = () => {
+    console.log("Here...");
     setConfirmed(true);
   };
 

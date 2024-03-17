@@ -75,10 +75,20 @@
 .label {
     display: flex;
     justify-content: space-between;
-
 }
 
 .show {
     display: block;
     visibility:visible;
+}
+
+
+/* ===============================
+* 750
+==================================*/
+@media (max-width:46.875em) {
+    .next-btn-wrapper {
+        display: none;
+        visibility: hidden;
+    }
 }
